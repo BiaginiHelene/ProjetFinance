@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import javax.swing.*;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.BorderLayout;
 
 public class Main extends Application {
 
@@ -40,20 +41,26 @@ public class Main extends Application {
         //Termine le processus lorsqu'on clique sur la croix rouge
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JPanel pan = new JPanel();
-        fenetre.setBackground(Color.GREEN);
-        pan.setPreferredSize(new Dimension(300, 300));
-        fenetre.setContentPane(pan);
 
-
+        // Déclaration manuelle des valeurs du tableau des actions
         Object[][] actionData = {
+                {"dg","dsh","dsh", "dsh", "sdg", "sdg"},
+                {"dg","dsh","dsh", "dsh", "sdg", "sdg"},
+                {"dg","dsh","dsh", "dsh", "sdg", "sdg"},
+                {"dg","dsh","dsh", "dsh", "sdg", "sdg"},
                 {"dg","dsh","dsh", "dsh", "sdg", "sdg"}
         };
-        String actionTitle[] = {"Nom", "Valeur", "Poids", "Ticher", "Prix", "Date d'évaluation"};
+        String actionTitle[] = {"Nom", "Valeur", "Poids", "Ticher", "Prix", "Date d'evaluation"};
         JTable tableauAction = new JTable(actionData, actionTitle);
         fenetre.getContentPane().add(new JScrollPane(tableauAction));
         tableauAction.setVisible(true);
-        fenetre.setSize(600, 140);
+        fenetre.setSize(700, 150);
+
+        // Couleur du tableau
+        tableauAction.setBackground(Color.white);
+        fenetre.setTitle("Recapitulatif Actions");
+
+
 
 
 
