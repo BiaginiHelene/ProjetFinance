@@ -51,6 +51,13 @@ public class Main extends Application {
         };
         String actionTitle[] = {"Nom", "Valeur", "Poids", "Ticher", "Prix", "Date d'évaluation"};
         JTable tableauAction = new JTable(actionData, actionTitle);
+        fenetre.getContentPane().add(new JScrollPane(tableauAction));
+        tableauAction.setVisible(true);
+        fenetre.setSize(600, 140);
+
+
+
+
 
     }
 }
