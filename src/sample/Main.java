@@ -6,7 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import javax.swing.JFrame;
+import javax.swing.*;
+import java.awt.Color;
+import java.awt.Dimension;
 
 public class Main extends Application {
 
@@ -28,7 +30,9 @@ public class Main extends Application {
         fenetre.setTitle("Projet Finance");
 
         // Définit taille de la fenêtre
-        fenetre.setSize(500,500);
+        fenetre.setSize(500, 500);
+        //Empêche la redimension de la fenêtre
+        fenetre.setResizable(false);
 
         //Nous demandons maintenant à notre objet de se positionner au centre
         fenetre.setLocationRelativeTo(null);
@@ -36,6 +40,17 @@ public class Main extends Application {
         //Termine le processus lorsqu'on clique sur la croix rouge
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        JPanel pan = new JPanel();
+        fenetre.setBackground(Color.GREEN);
+        pan.setPreferredSize(new Dimension(300, 300));
+        fenetre.setContentPane(pan);
+
+
+        Object[][] actionData = {
+                {"dg","dsh","dsh", "dsh", "sdg", "sdg"}
+        };
+        String actionTitle[] = {"Nom", "Valeur", "Poids", "Ticher", "Prix", "Date d'évaluation"};
+        JTable tableauAction = new JTable(actionData, actionTitle);
 
     }
 }
